@@ -28,7 +28,7 @@ public class Account implements Serializable {
     public Account() {
     }
 
-    public Account(Long accountNr){
+    public Account(Long accountNr) {
         balance = 0L;
         threshold = 0L;
         this.accountNr = accountNr;
