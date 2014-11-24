@@ -21,16 +21,16 @@ import static org.junit.Assert.*;
  * @author Eveko
  */
 public class Opdracht1 {
-    EntityManagerFactory emf = Persistence.createEntityManagerFactory("bankPU"); 
-    EntityManager em;
 
+    EntityManagerFactory emf = Persistence.createEntityManagerFactory("bankPU");
+    EntityManager em;
 
     public Opdracht1() {
     }
 
     @BeforeClass
     public static void setUpClass() {
-        
+
     }
 
     @AfterClass
@@ -39,7 +39,7 @@ public class Opdracht1 {
 
     @Before
     public void setUp() {
-        
+
         em = emf.createEntityManager();
     }
 
@@ -51,16 +51,22 @@ public class Opdracht1 {
     // TODO add test methods here.
     // The methods must be annotated with annotation @Test. For example:
     //
-     @Test
+    @Test
     public void hello() {
         Account account = new Account(112L);
         em.getTransaction().begin();
         em.persist(account);
-//TODO: verklaar en pas eventueel aan
+        /**
+         * Bij persist() maakt hij allen de instantie en wordt er nog niet
+         * gecommit. Het komt hier dus nog niet in de database.
+         */
         assertNull(account.getId());
         em.getTransaction().commit();
         System.out.println("AccountId: " + account.getId());
-//TODO: verklaar en pas eventueel aan
+        /**
+         * Bij commit() probeert hij het naar de database te schrijven. Hier
+         * komen dus ook alle database errors naar boven (zoals Duplicate Key).
+         */
         assertTrue(account.getId() > 0L);
     }
 }
