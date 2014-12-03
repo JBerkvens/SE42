@@ -2,6 +2,7 @@ package auction.dao;
 
 import auction.domain.User;
 import java.util.List;
+import javax.persistence.Entity;
 
 public interface UserDAO {
 

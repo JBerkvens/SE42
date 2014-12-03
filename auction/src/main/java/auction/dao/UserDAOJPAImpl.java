@@ -1,15 +1,8 @@
 package auction.dao;
 
 import auction.domain.User;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-import javax.persistence.CascadeType;
-import javax.persistence.EntityExistsException;
 import javax.persistence.EntityManager;
-import javax.persistence.FetchType;
-import javax.persistence.OneToMany;
 import javax.persistence.criteria.CriteriaQuery;
 
 public class UserDAOJPAImpl implements UserDAO {
@@ -25,7 +18,6 @@ public class UserDAOJPAImpl implements UserDAO {
 
     @Override
     public int count() {
-          
         CriteriaQuery cq = em.getCriteriaBuilder().createQuery();
         cq.select(cq.from(User.class));
         return em.createQuery(cq).getResultList().size();

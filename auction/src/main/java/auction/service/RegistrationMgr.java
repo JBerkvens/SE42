@@ -4,18 +4,29 @@ import java.util.*;
 import auction.domain.User;
 import auction.dao.UserDAO;
 import auction.dao.UserDAOJPAImpl;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 public class RegistrationMgr {
 
+    private final EntityManagerFactory emf = Persistence.createEntityManagerFactory("auctionPU");
+    private EntityManager em;
     private UserDAO userDAO;
 
     public RegistrationMgr() {
-        userDAO = new UserDAOJPAImpl();
+    }
+    
+    public RegistrationMgr(EntityManager em) {
+        this.em = em;
+        userDAO = new UserDAOJPAImpl(this.em);
+        this.em.getTransaction().begin();
     }
 
     /**
      * Registreert een gebruiker met het als parameter gegeven e-mailadres, mits
      * zo'n gebruiker nog niet bestaat.
+     *
      * @param email
      * @return Een Userobject dat geïdentificeerd wordt door het gegeven
      * e-mailadres (nieuw aangemaakt of reeds bestaand). Als het e-mailadres
@@ -30,7 +41,11 @@ public class RegistrationMgr {
             return user;
         }
         user = new User(email);
+        if (!em.getTransaction().isActive()) {
+            em.getTransaction().begin();
+        }
         userDAO.create(user);
+        em.getTransaction().commit();
         return user;
     }
 
@@ -41,13 +56,21 @@ public class RegistrationMgr {
      * e-mailadres of null als zo'n User niet bestaat.
      */
     public User getUser(String email) {
-        return userDAO.findByEmail(email);
+        if (!em.getTransaction().isActive()) {
+            em.getTransaction().begin();
+        }
+        User returner = userDAO.findByEmail(email);
+        return returner;
     }
 
     /**
      * @return Een iterator over alle geregistreerde gebruikers
      */
     public List<User> getUsers() {
-        return userDAO.findAll();
+        if (!em.getTransaction().isActive()) {
+            em.getTransaction().begin();
+        }
+        List<User> returner = userDAO.findAll();
+        return returner;
     }
 }
