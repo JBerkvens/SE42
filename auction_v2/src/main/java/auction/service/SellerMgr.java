@@ -46,11 +46,12 @@ public class SellerMgr {
      * verwijderd. false als er al geboden was op het item.
      */
     public boolean revokeItem(Item item) {
-        if (item.getHighestBid() != null) {
+        if (item.getHighestBid() == null) {
             em = emf.createEntityManager();
             itemDAO = new ItemDAOJPAImpl(this.em);
             this.em.getTransaction().begin();
             itemDAO.remove(item);
+            em.getTransaction().commit();
             em.close();
             return true;
         } else {

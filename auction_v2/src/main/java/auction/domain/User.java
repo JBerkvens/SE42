@@ -2,6 +2,7 @@ package auction.domain;
 
 import java.util.List;
 import java.util.Objects;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
@@ -11,7 +12,7 @@ public class User {
 
     @Id
     private String email;
-    
+
     public String getEmail() {
         return email;
     }
@@ -48,5 +49,5 @@ public class User {
         }
         return true;
     }
-    
+
 }

@@ -42,7 +42,7 @@ public class RegistrationMgrTest {
     public void getUser() {
         User user1 = registrationMgr.registerUser("xxx5@yyy5");
         User userGet = registrationMgr.getUser("xxx5@yyy5");
-        assertSame(userGet, user1);
+        assertEquals(userGet, user1);
         assertNull(registrationMgr.getUser("aaa4@bb5"));
         registrationMgr.registerUser("abc");
         assertNull(registrationMgr.getUser("abc"));
@@ -56,7 +56,7 @@ public class RegistrationMgrTest {
         User user1 = registrationMgr.registerUser("xxx8@yyy");
         users = registrationMgr.getUsers();
         assertEquals(1, users.size());
-        assertSame(users.get(0), user1);
+        assertEquals(users.get(0), user1);
 
 
         User user2 = registrationMgr.registerUser("xxx9@yyy");

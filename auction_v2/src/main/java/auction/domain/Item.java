@@ -8,6 +8,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import nl.fontys.util.Money;
 
 @Entity
@@ -16,10 +17,12 @@ public class Item implements Comparable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @ManyToOne
     private User seller;
     @Embedded
     private Category category;
     private String description;
+    @OneToOne
     private Bid highest;
 
     public Item() {

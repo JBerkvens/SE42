@@ -1,12 +1,11 @@
 package auction.domain;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 import nl.fontys.util.FontysTime;
 import nl.fontys.util.Money;
 
@@ -18,7 +17,7 @@ public class Bid {
     private Long id;
     @Embedded
     private FontysTime time;
-    @OneToOne(cascade=CascadeType.REMOVE)
+    @ManyToOne
     private User buyer;
     @Embedded
     private Money amount;

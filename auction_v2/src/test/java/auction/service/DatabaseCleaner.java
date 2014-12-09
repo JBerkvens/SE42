@@ -1,5 +1,7 @@
 package auction.service;
 
+import auction.domain.Bid;
+import auction.domain.Item;
 import auction.domain.User;
 import java.sql.SQLException;
 import javax.persistence.EntityManager;
@@ -8,6 +10,8 @@ import javax.persistence.metamodel.EntityType;
 public abstract class DatabaseCleaner {
 
     private static final Class<?>[] ENTITY_TYPES = {
+        Item.class,
+        Bid.class,
         User.class
     };
 
