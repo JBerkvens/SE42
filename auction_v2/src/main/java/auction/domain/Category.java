@@ -1,7 +1,12 @@
 package auction.domain;
 
-public class Category {
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
 
+@Embeddable
+public class Category {
+    
+    @Column(name = "CATEGORY_DESCRIPTION")
     private String description;
 
     private Category() {

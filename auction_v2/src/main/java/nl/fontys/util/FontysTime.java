@@ -2,7 +2,9 @@ package nl.fontys.util;
 
 import java.sql.Time;
 import java.util.TimeZone;
+import javax.persistence.Embeddable;
 
+@Embeddable
 public class FontysTime {
 	private long seconds;
 

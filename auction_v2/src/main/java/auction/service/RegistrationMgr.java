@@ -15,6 +15,9 @@ public class RegistrationMgr {
     private UserDAO userDAO;
 
     public RegistrationMgr() {
+        em = emf.createEntityManager();
+        userDAO = new UserDAOJPAImpl(this.em);
+        this.em.getTransaction().begin();
     }
     
     public RegistrationMgr(EntityManager em) {
@@ -33,6 +36,9 @@ public class RegistrationMgr {
      * onjuist is ( het bevat geen '@'-teken) wordt null teruggegeven.
      */
     public User registerUser(String email) {
+        em = emf.createEntityManager();
+        userDAO = new UserDAOJPAImpl(this.em);
+        this.em.getTransaction().begin();
         if (!email.contains("@")) {
             return null;
         }
@@ -46,6 +52,7 @@ public class RegistrationMgr {
         }
         userDAO.create(user);
         em.getTransaction().commit();
+        em.close();
         return user;
     }
 
@@ -56,10 +63,11 @@ public class RegistrationMgr {
      * e-mailadres of null als zo'n User niet bestaat.
      */
     public User getUser(String email) {
-        if (!em.getTransaction().isActive()) {
-            em.getTransaction().begin();
-        }
+        em = emf.createEntityManager();
+        userDAO = new UserDAOJPAImpl(this.em);
+        this.em.getTransaction().begin();
         User returner = userDAO.findByEmail(email);
+        em.close();
         return returner;
     }
 
@@ -67,10 +75,11 @@ public class RegistrationMgr {
      * @return Een iterator over alle geregistreerde gebruikers
      */
     public List<User> getUsers() {
-        if (!em.getTransaction().isActive()) {
-            em.getTransaction().begin();
-        }
+        em = emf.createEntityManager();
+        userDAO = new UserDAOJPAImpl(this.em);
+        this.em.getTransaction().begin();
         List<User> returner = userDAO.findAll();
+        em.close();
         return returner;
     }
 }

@@ -12,9 +12,15 @@ import auction.domain.Category;
 import auction.domain.Item;
 import auction.domain.User;
 import java.util.ArrayList;
+import java.util.List;
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 
 public class AuctionMgrTest {
 
+    private final EntityManagerFactory emf = Persistence.createEntityManagerFactory("auctionPU");
+    private EntityManager em = emf.createEntityManager();
     private AuctionMgr auctionMgr;
     private RegistrationMgr registrationMgr;
     private SellerMgr sellerMgr;
@@ -24,6 +30,7 @@ public class AuctionMgrTest {
         registrationMgr = new RegistrationMgr();
         auctionMgr = new AuctionMgr();
         sellerMgr = new SellerMgr();
+        DatabaseCleaner.clean(em);
     }
 
     @Test
@@ -53,10 +60,10 @@ public class AuctionMgrTest {
         Item item1 = sellerMgr.offerItem(seller3, cat, omsch);
         Item item2 = sellerMgr.offerItem(seller4, cat, omsch);
 
-        ArrayList<Item> res = (ArrayList<Item>) auctionMgr.findItemByDescription(omsch2);
+        List<Item> res = auctionMgr.findItemByDescription(omsch2);
         assertEquals(0, res.size());
 
-        res = (ArrayList<Item>) auctionMgr.findItemByDescription(omsch);
+        res = auctionMgr.findItemByDescription(omsch);
         assertEquals(2, res.size());
 
     }

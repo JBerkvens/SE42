@@ -1,18 +1,29 @@
 package auction.domain;
 
+import java.util.Objects;
+import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import nl.fontys.util.Money;
 
 @Entity
 public class Item implements Comparable {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private User seller;
+    @Embedded
     private Category category;
     private String description;
     private Bid highest;
+
+    public Item() {
+    }
 
     public Item(User seller, Category category, String description) {
         this.seller = seller;
@@ -48,18 +59,54 @@ public class Item implements Comparable {
         return highest;
     }
 
+    @Override
     public int compareTo(Object arg0) {
-        //TODO
-        return -1;
+        Item item = (Item) arg0;
+        if (this.id > item.id) {
+            return 1;
+        } else if (this.id < item.id) {
+            return -1;
+        } else {
+            return 0;
+        }
     }
 
-    public boolean equals(Object o) {
-        //TODO
-        return false;
-    }
-
+    @Override
     public int hashCode() {
-        //TODO
-        return 0;
+        int hash = 3;
+        hash = 67 * hash + Objects.hashCode(this.id);
+        hash = 67 * hash + Objects.hashCode(this.seller);
+        hash = 67 * hash + Objects.hashCode(this.category);
+        hash = 67 * hash + Objects.hashCode(this.description);
+        hash = 67 * hash + Objects.hashCode(this.highest);
+        return hash;
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final Item other = (Item) obj;
+        if (!Objects.equals(this.id, other.id)) {
+            return false;
+        }
+        if (!Objects.equals(this.seller, other.seller)) {
+            return false;
+        }
+        if (!Objects.equals(this.category, other.category)) {
+            return false;
+        }
+        if (!Objects.equals(this.description, other.description)) {
+            return false;
+        }
+        if (!Objects.equals(this.highest, other.highest)) {
+            return false;
+        }
+        return true;
+    }
+
 }

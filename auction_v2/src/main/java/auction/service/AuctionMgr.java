@@ -2,6 +2,7 @@ package auction.service;
 
 import auction.dao.ItemDAO;
 import auction.dao.ItemDAOJPAImpl;
+import auction.dao.UserDAOJPAImpl;
 import auction.domain.Bid;
 import auction.domain.Item;
 import auction.domain.User;
@@ -18,6 +19,9 @@ public class AuctionMgr  {
     private ItemDAO itemDAO;
 
     public AuctionMgr() {
+        em = emf.createEntityManager();
+        itemDAO = new ItemDAOJPAImpl(this.em);
+        this.em.getTransaction().begin();
     }
     
     public AuctionMgr(EntityManager em) {
@@ -32,10 +36,11 @@ public class AuctionMgr  {
      *         geretourneerd
      */
     public Item getItem(Long id) {
-        if (!em.getTransaction().isActive()) {
-            em.getTransaction().begin();
-        }
+        em = emf.createEntityManager();
+        itemDAO = new ItemDAOJPAImpl(this.em);
+        this.em.getTransaction().begin();
         Item returner = itemDAO.find(id);
+        em.close();
         return returner;
     }
 
@@ -45,10 +50,11 @@ public class AuctionMgr  {
      * @return een lijst met items met @desciption. Eventueel lege lijst.
      */
     public List<Item> findItemByDescription(String description) {
-        if (!em.getTransaction().isActive()) {
-            em.getTransaction().begin();
-        }
+        em = emf.createEntityManager();
+        itemDAO = new ItemDAOJPAImpl(this.em);
+        this.em.getTransaction().begin();
         List<Item> returner = itemDAO.findByDescription(description);
+        em.close();
         return returner;
     }
 
@@ -60,11 +66,12 @@ public class AuctionMgr  {
      *         amount niet hoger was dan het laatste bod, dan null
      */
     public Bid newBid(Item item, User buyer, Money amount) {
-        if (!em.getTransaction().isActive()) {
-            em.getTransaction().begin();
-        }
+        em = emf.createEntityManager();
+        itemDAO = new ItemDAOJPAImpl(this.em);
+        this.em.getTransaction().begin();
         Bid returner = item.newBid(buyer, amount);
         itemDAO.edit(item);
+        em.close();
         return returner;
     }
 }
