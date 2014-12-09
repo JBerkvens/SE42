@@ -15,15 +15,10 @@ public class RegistrationMgr {
     private UserDAO userDAO;
 
     public RegistrationMgr() {
-        em = emf.createEntityManager();
-        userDAO = new UserDAOJPAImpl(this.em);
-        this.em.getTransaction().begin();
     }
     
     public RegistrationMgr(EntityManager em) {
         this.em = em;
-        userDAO = new UserDAOJPAImpl(this.em);
-        this.em.getTransaction().begin();
     }
 
     /**

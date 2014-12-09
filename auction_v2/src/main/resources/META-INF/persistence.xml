@@ -7,7 +7,7 @@
     <class>auction.domain.Item</class>
     <shared-cache-mode>NONE</shared-cache-mode>
     <properties>
-      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://moridrin.com:3306/se42?zeroDateTimeBehavior=convertToNull"/>
+      <property name="javax.persistence.jdbc.url" value="jdbc:mysql://moridrin.com:3306/se42"/>
       <property name="javax.persistence.jdbc.user" value="SE42"/>
       <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
       <property name="javax.persistence.jdbc.password" value="F9nn4Exvm23UThnM"/>

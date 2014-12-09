@@ -19,15 +19,11 @@ public class AuctionMgr  {
     private ItemDAO itemDAO;
 
     public AuctionMgr() {
-        em = emf.createEntityManager();
-        itemDAO = new ItemDAOJPAImpl(this.em);
-        this.em.getTransaction().begin();
     }
     
     public AuctionMgr(EntityManager em) {
         this.em = em;
         itemDAO = new ItemDAOJPAImpl(this.em);
-        this.em.getTransaction().begin();
     }
 
    /**
@@ -40,6 +36,7 @@ public class AuctionMgr  {
         itemDAO = new ItemDAOJPAImpl(this.em);
         this.em.getTransaction().begin();
         Item returner = itemDAO.find(id);
+        em.getTransaction().commit();
         em.close();
         return returner;
     }
@@ -54,6 +51,7 @@ public class AuctionMgr  {
         itemDAO = new ItemDAOJPAImpl(this.em);
         this.em.getTransaction().begin();
         List<Item> returner = itemDAO.findByDescription(description);
+        em.getTransaction().commit();
         em.close();
         return returner;
     }
@@ -71,6 +69,7 @@ public class AuctionMgr  {
         this.em.getTransaction().begin();
         Bid returner = item.newBid(buyer, amount);
         itemDAO.edit(item);
+        em.getTransaction().commit();
         em.close();
         return returner;
     }

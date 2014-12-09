@@ -20,17 +20,16 @@ import javax.persistence.Persistence;
 public class AuctionMgrTest {
 
     private final EntityManagerFactory emf = Persistence.createEntityManagerFactory("auctionPU");
-    private EntityManager em = emf.createEntityManager();
     private AuctionMgr auctionMgr;
     private RegistrationMgr registrationMgr;
     private SellerMgr sellerMgr;
 
     @Before
     public void setUp() throws Exception {
+        DatabaseCleaner.clean(emf.createEntityManager());
         registrationMgr = new RegistrationMgr();
         auctionMgr = new AuctionMgr();
         sellerMgr = new SellerMgr();
-        DatabaseCleaner.clean(em);
     }
 
     @Test
@@ -70,7 +69,6 @@ public class AuctionMgrTest {
 
     @Test
     public void newBid() {
-
         String email = "ss2@nl";
         String emailb = "bb@nl";
         String emailb2 = "bb2@nl";

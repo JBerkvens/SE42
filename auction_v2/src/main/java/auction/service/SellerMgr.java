@@ -16,15 +16,10 @@ public class SellerMgr {
     private ItemDAO itemDAO;
 
     public SellerMgr() {
-        em = emf.createEntityManager();
-        itemDAO = new ItemDAOJPAImpl(this.em);
-        this.em.getTransaction().begin();
     }
 
     public SellerMgr(EntityManager em) {
         this.em = em;
-        itemDAO = new ItemDAOJPAImpl(this.em);
-        this.em.getTransaction().begin();
     }
 
     /**
