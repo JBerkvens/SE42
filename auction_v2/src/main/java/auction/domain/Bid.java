@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.validation.constraints.NotNull;
 import nl.fontys.util.FontysTime;
 import nl.fontys.util.Money;
 
@@ -15,6 +17,8 @@ public class Bid {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @OneToOne
+    private Item item;
     @Embedded
     private FontysTime time;
     @ManyToOne
@@ -25,7 +29,8 @@ public class Bid {
     public Bid() {
     }
 
-    public Bid(User buyer, Money amount) {
+    public Bid(Item item, User buyer, Money amount) {
+        this.item = item;
         this.buyer = buyer;
         this.amount = amount;
     }

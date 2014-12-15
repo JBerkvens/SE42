@@ -1,10 +1,13 @@
 package auction.domain;
 
-import java.util.List;
 import java.util.Objects;
+import java.util.Set;
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 
 @Entity
@@ -12,6 +15,9 @@ public class User {
 
     @Id
     private String email;
+    @OneToMany(fetch = FetchType.LAZY, mappedBy = "seller")
+    //@JoinColumn(name = "SELLER_ID")
+    Set<Item> offeredItems;
 
     public String getEmail() {
         return email;
@@ -19,6 +25,18 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public Set<Item> getOfferedItems() {
+        return offeredItems;
+    }
+
+    public void addItem(Item item) {
+        offeredItems.add(item);
+    }
+
+    public int numberOfOfferedItems() {
+        return offeredItems.size();
     }
 
     public User() {

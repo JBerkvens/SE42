@@ -2,6 +2,8 @@ package auction.service;
 
 import auction.dao.ItemDAO;
 import auction.dao.ItemDAOJPAImpl;
+import auction.dao.UserDAO;
+import auction.dao.UserDAOJPAImpl;
 import auction.domain.Category;
 import auction.domain.Item;
 import auction.domain.User;
@@ -14,6 +16,7 @@ public class SellerMgr {
     private final EntityManagerFactory emf = Persistence.createEntityManagerFactory("auctionPU");
     private EntityManager em;
     private ItemDAO itemDAO;
+    private UserDAO userDAO;
 
     public SellerMgr() {
     }
@@ -32,9 +35,12 @@ public class SellerMgr {
     public Item offerItem(User seller, Category cat, String description) {
         em = emf.createEntityManager();
         itemDAO = new ItemDAOJPAImpl(this.em);
+        userDAO = new UserDAOJPAImpl(this.em);
         this.em.getTransaction().begin();
         Item offer = new Item(seller, cat, description);
+        seller.addItem(offer);
         itemDAO.create(offer);
+        userDAO.edit(seller);
         em.getTransaction().commit();
         em.close();
         return offer;

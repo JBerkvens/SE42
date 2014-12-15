@@ -1,8 +1,10 @@
 package auction.domain;
 
 import java.util.Objects;
+import javax.persistence.CascadeType;
 import javax.persistence.Embedded;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -22,7 +24,7 @@ public class Item implements Comparable {
     @Embedded
     private Category category;
     private String description;
-    @OneToOne
+    @OneToOne(mappedBy = "item")
     private Bid highest;
 
     public Item() {
@@ -58,7 +60,7 @@ public class Item implements Comparable {
         if (highest != null && highest.getAmount().compareTo(amount) >= 0) {
             return null;
         }
-        highest = new Bid(buyer, amount);
+        highest = new Bid(this, buyer, amount);
         return highest;
     }
 
