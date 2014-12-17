@@ -1,5 +1,6 @@
 package auction.domain;
 
+import javax.persistence.Entity;
 import nl.fontys.util.FontysTime;
 import nl.fontys.util.Money;
 

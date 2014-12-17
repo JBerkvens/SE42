@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="9" failures="0" name="util.Opdracht1" time="5.79" errors="0" skipped="0">
+<testsuite tests="9" failures="0" name="util.Opdracht1" time="7.284" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk1.8.0_20\jre\bin"/>
@@ -64,13 +64,13 @@
     <property name="sun.desktop" value="windows"/>
     <property name="sun.cpu.isalist" value="amd64"/>
   </properties>
-  <testcase classname="util.Opdracht1" name="refreshTest" time="0.415"/>
-  <testcase classname="util.Opdracht1" name="flushTest" time="0.219"/>
-  <testcase classname="util.Opdracht1" name="editAfterPersistTest" time="0.227"/>
-  <testcase classname="util.Opdracht1" name="rollbackTest" time="0.201"/>
-  <testcase classname="util.Opdracht1" name="persistCommitTest" time="0.215"/>
-  <testcase classname="util.Opdracht1" name="removeTest" time="0.227"/>
-  <testcase classname="util.Opdracht1" name="generationTypeTest" time="0.087"/>
-  <testcase classname="util.Opdracht1" name="mergeTest" time="0.604"/>
+  <testcase classname="util.Opdracht1" name="refreshTest" time="0.52"/>
+  <testcase classname="util.Opdracht1" name="flushTest" time="0.209"/>
+  <testcase classname="util.Opdracht1" name="editAfterPersistTest" time="0.235"/>
+  <testcase classname="util.Opdracht1" name="rollbackTest" time="0.26"/>
+  <testcase classname="util.Opdracht1" name="persistCommitTest" time="0.207"/>
+  <testcase classname="util.Opdracht1" name="removeTest" time="0.229"/>
+  <testcase classname="util.Opdracht1" name="generationTypeTest" time="0.095"/>
+  <testcase classname="util.Opdracht1" name="mergeTest" time="0.607"/>
   <testcase classname="util.Opdracht1" name="findAndClearTest" time="0.232"/>
 </testsuite>

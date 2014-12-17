@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><!--
+        *** GENERATED FROM jax-ws.xml - DO NOT EDIT !                             ***
+        *** TO MODIFY wsimport options USE Web Service node -> Edit WS Attributes ***
+        *** TO CHANGE TARGETS GENERATED TO jaxws-build.xml COPY THOSE             ***
+        *** TARGETS TO ../build.xml AND MODIFY THAT FILE INSTEAD                  ***
+
+        --><project xmlns:xalan="http://xml.apache.org/xslt" xmlns:j2seproject3="http://www.netbeans.org/ns/j2se-project/3" xmlns:jaxws="http://www.netbeans.org/ns/jax-ws/1">
+    <!--
+                ===================
+                JAX-WS WSIMPORT SECTION
+                ===================
+            -->
+    <target name="wsimport-init" depends="init">
+        <mkdir dir="${build.generated.sources.dir}/jax-ws"/>
+        <taskdef name="wsimport" classname="com.sun.tools.ws.ant.WsImport">
+            <classpath path="${libs.jaxws21.classpath}"/>
+        </taskdef>
+    </target>
+    <target name="wsimport-client-auction" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/auction"/>
+        <property name="wsdl-auction" location="xml-resources/web-service-references/auction/wsdl/localhost_8080/auction.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/auction" destdir="${build.generated.dir}/jax-wsCache/auction" wsdl="${wsdl-auction}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/auction?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-auction}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/auction"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/auction">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-auction" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/auction"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/webservice"/>
+    </target>
+    <target name="wsimport-client-auctionRegistration" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/auctionRegistration"/>
+        <property name="wsdl-auctionRegistration" location="xml-resources/web-service-references/auctionRegistration/wsdl/localhost_8081/auctionRegistration.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/auctionRegistration" destdir="${build.generated.dir}/jax-wsCache/auctionRegistration" wsdl="${wsdl-auctionRegistration}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8081/auctionRegistration?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-auctionRegistration}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/auctionRegistration"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/auctionRegistration">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-auctionRegistration" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/auctionRegistration"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/webservice"/>
+    </target>
+    <target name="wsimport-client-auctionDatabaseCleaner" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/auctionDatabaseCleaner"/>
+        <property name="wsdl-auctionDatabaseCleaner" location="xml-resources/web-service-references/auctionDatabaseCleaner/wsdl/localhost_8082/auctionDatabaseCleaner.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/auctionDatabaseCleaner" destdir="${build.generated.dir}/jax-wsCache/auctionDatabaseCleaner" wsdl="${wsdl-auctionDatabaseCleaner}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8082/auctionDatabaseCleaner?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${wsdl-auctionDatabaseCleaner}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/auctionDatabaseCleaner"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/auctionDatabaseCleaner">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-auctionDatabaseCleaner" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/auctionDatabaseCleaner"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/webservice"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-auction, wsimport-client-auctionRegistration, wsimport-client-auctionDatabaseCleaner"/>
+</project>

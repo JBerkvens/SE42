@@ -9,8 +9,6 @@ public class UserDAOJPAImpl implements UserDAO {
 
     private final EntityManager em;
     private User user;
-    //@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    
 
     public UserDAOJPAImpl(EntityManager em) {
        this.em = em;

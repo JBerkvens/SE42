@@ -10,3 +10,11 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+/auction/target/
+/auction_v2/target/
+/CalculatorService/target/
+/CalculatorClient/target/
+/auction_client/target/
+/auction_client/nbproject/private/
+/auction_client/build/
+/auction_client/dist/

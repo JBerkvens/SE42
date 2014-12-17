@@ -15,6 +15,9 @@ public class RegistrationMgr {
     private UserDAO userDAO;
 
     public RegistrationMgr() {
+        this.em = emf.createEntityManager();
+        userDAO = new UserDAOJPAImpl(this.em);
+        this.em.getTransaction().begin();
     }
     
     public RegistrationMgr(EntityManager em) {
