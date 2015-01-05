@@ -1,3 +1,4 @@
+import auction.domain.Item;
 import javax.xml.ws.Endpoint;
 import webService.WebAuction;
 
