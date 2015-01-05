@@ -1,4 +1,5 @@
 
+import java.util.List;
 import webservice.Bid;
 import webservice.Category;
 import webservice.Item;
@@ -41,13 +42,13 @@ public class main {
         return port.getItem(arg0);
     }
 
-    private static java.util.List<webservice.Item> findItemByDescription(java.lang.String arg0) {
+    private static List<Item> findItemByDescription(java.lang.String arg0) {
         webservice.WebAuctionService service = new webservice.WebAuctionService();
         webservice.WebAuction port = service.getWebAuctionPort();
         return port.findItemByDescription(arg0);
     }
 
-    private static Bid newBid(webservice.Item arg0, webservice.User arg1, webservice.Money arg2) {
+    private static Bid newBid(Item arg0, webservice.User arg1, webservice.Money arg2) {
         webservice.WebAuctionService service = new webservice.WebAuctionService();
         webservice.WebAuction port = service.getWebAuctionPort();
         return port.newBid(arg0, arg1, arg2);

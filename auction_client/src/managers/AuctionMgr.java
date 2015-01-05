@@ -14,7 +14,7 @@ import webservice.Item;
  */
 public class AuctionMgr {
 
-    private static Item getItem(long arg0) {
+    public static Item getItem(long arg0) {
         webservice.WebAuctionService service = new webservice.WebAuctionService();
         webservice.WebAuction port = service.getWebAuctionPort();
         return port.getItem(arg0);
