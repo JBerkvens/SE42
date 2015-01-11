@@ -8,5 +8,6 @@ public class PublishMainWebService {
 
     public static void main(String[] args) {
         Endpoint.publish(url, new WebAuction());
+        System.out.println("Successfull Started!");
     }
 }
