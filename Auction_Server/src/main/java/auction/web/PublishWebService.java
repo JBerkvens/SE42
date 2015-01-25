@@ -21,5 +21,4 @@ public class PublishWebService {
         DatabaseCleaner dbcl = new DatabaseCleaner();
         Endpoint.publish(url + "databasecleaner", dbcl);
     }
-    
 }

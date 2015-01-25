@@ -63,21 +63,6 @@ public interface Auction {
 
     /**
      * 
-     * @param arg0
-     * @return
-     *     returns boolean
-     */
-    @WebMethod
-    @WebResult(targetNamespace = "")
-    @RequestWrapper(localName = "revokeItem", targetNamespace = "http://web.auction/", className = "auction.web.RevokeItem")
-    @ResponseWrapper(localName = "revokeItemResponse", targetNamespace = "http://web.auction/", className = "auction.web.RevokeItemResponse")
-    @Action(input = "http://web.auction/Auction/revokeItemRequest", output = "http://web.auction/Auction/revokeItemResponse")
-    public boolean revokeItem(
-        @WebParam(name = "arg0", targetNamespace = "")
-        Item arg0);
-
-    /**
-     * 
      * @param arg2
      * @param arg1
      * @param arg0
@@ -96,6 +81,21 @@ public interface Auction {
         Category arg1,
         @WebParam(name = "arg2", targetNamespace = "")
         String arg2);
+
+    /**
+     * 
+     * @param arg0
+     * @return
+     *     returns boolean
+     */
+    @WebMethod
+    @WebResult(targetNamespace = "")
+    @RequestWrapper(localName = "revokeItem", targetNamespace = "http://web.auction/", className = "auction.web.RevokeItem")
+    @ResponseWrapper(localName = "revokeItemResponse", targetNamespace = "http://web.auction/", className = "auction.web.RevokeItemResponse")
+    @Action(input = "http://web.auction/Auction/revokeItemRequest", output = "http://web.auction/Auction/revokeItemResponse")
+    public boolean revokeItem(
+        @WebParam(name = "arg0", targetNamespace = "")
+        Item arg0);
 
     /**
      * 

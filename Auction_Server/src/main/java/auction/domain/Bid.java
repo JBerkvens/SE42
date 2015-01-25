@@ -26,7 +26,7 @@ public class Bid implements Serializable {
     @Embedded
     private FontysTime time;
     
-    @OneToOne
+    @ManyToOne
     private User buyer;
     
     @Embedded

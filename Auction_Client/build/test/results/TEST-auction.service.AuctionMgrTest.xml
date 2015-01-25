@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite errors="0" failures="0" hostname="MP-Satellite" name="auction.service.AuctionMgrTest" skipped="0" tests="3" time="4.76" timestamp="2015-01-11T13:04:29">
+<testsuite errors="0" failures="0" hostname="MP-Satellite" name="auction.service.AuctionMgrTest" skipped="0" tests="3" time="6.247" timestamp="2015-01-12T12:37:40">
   <properties>
     <property name="libs.jsp-compiler.javadoc" value="" />
     <property name="netbeans.autoupdate.country" value="US" />
     <property name="javac.test.classpath" value="/usr/local/netbeans-8.0.2/platform/modules/ext/junit-4.10.jar:/usr/local/netbeans-8.0.2/java/modules/ext/junit-3.8.2.jar:build/classes" />
     <property name="libs.jsf20.maven-pom" value="" />
     <property name="libs.DataBindingME.src" value="/usr/local/netbeans-8.0.2/mobility/sources/netbeans_databindingme-src.zip" />
-    <property name="wsdl-registration" value="/home/jeroen/Downloads/03/auction webservice + client/Auction_Client/xml-resources/web-service-references/registration/wsdl/localhost_8080/registration.wsdl" />
+    <property name="wsdl-registration" value="/home/jeroen/Data/git/Classes/SE42/Auction_Client/xml-resources/web-service-references/registration/wsdl/localhost_8080/registration.wsdl" />
     <property name="libs.junit.javadoc" value="/usr/local/netbeans-8.0.2/java/docs/junit-3.8.2-api.zip" />
     <property name="libs.spring-webmvc4.0.src" value="" />
     <property name="ant.core.lib" value="/usr/local/netbeans-8.0.2/extide/ant/lib/ant.jar" />
     <property name="javadoc.windowtitle" value="" />
     <property name="libs.jsp-compilation.javadoc" value="" />
-    <property name="user.dir" value="/home/jeroen/Downloads/03/auction webservice + client/Auction_Client" />
+    <property name="user.dir" value="/home/jeroen/Data/git/Classes/SE42/Auction_Client" />
     <property name="libs.javaee-api-7.0.src" value="" />
     <property name="java.vm.version" value="25.25-b02" />
     <property name="libs.DataBindingME.classpath" value="/usr/local/netbeans-8.0.2/mobility/modules/ext/netbeans_databindingme.jar" />
@@ -35,7 +35,7 @@
     <property name="libs.Java-EE-GlassFish-v3-Prelude.src" value="" />
     <property name="do.archive+manifest.available" value="true" />
     <property name="java.vm.specification.name" value="Java Virtual Machine Specification" />
-    <property name="ant.file.Auction_Client" value="/home/jeroen/Downloads/03/auction webservice + client/Auction_Client/build.xml" />
+    <property name="ant.file.Auction_Client" value="/home/jeroen/Data/git/Classes/SE42/Auction_Client/build.xml" />
     <property name="nb.show.statistics.ui" value="usageStatisticsEnabled" />
     <property name="netbeans.autoupdate.variant" value="" />
     <property name="have.tests" value="true" />
@@ -63,7 +63,7 @@
     <property name="libs.j2me_common_ant.maven-pom" value="" />
     <property name="libs.spring-webmvc3.0.maven-pom" value="" />
     <property name="libs.swing-layout.maven-pom" value="" />
-    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner auction.service.AuctionMgrTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/jeroen/Downloads/03/auction webservice + client/Auction_Client/build/test/results/TEST-auction.service.AuctionMgrTest.xml crashfile=/home/jeroen/Downloads/03/auction webservice + client/Auction_Client/build/junitvmwatcher7556874547825175539.properties propsfile=/home/jeroen/Downloads/03/auction webservice + client/Auction_Client/build/junit226549802023602183.properties" />
+    <property name="sun.java.command" value="org.apache.tools.ant.taskdefs.optional.junit.JUnitTestRunner auction.service.AuctionMgrTest skipNonTests=false filtertrace=true haltOnError=false haltOnFailure=false showoutput=true outputtoformatters=true logfailedtests=true threadid=0 logtestlistenerevents=true formatter=org.apache.tools.ant.taskdefs.optional.junit.BriefJUnitResultFormatter formatter=org.apache.tools.ant.taskdefs.optional.junit.XMLJUnitResultFormatter,/home/jeroen/Data/git/Classes/SE42/Auction_Client/build/test/results/TEST-auction.service.AuctionMgrTest.xml crashfile=/home/jeroen/Data/git/Classes/SE42/Auction_Client/build/junitvmwatcher7643521693044548474.properties propsfile=/home/jeroen/Data/git/Classes/SE42/Auction_Client/build/junit4135707233376909237.properties" />
     <property name="build.classes.dir" value="build/classes" />
     <property name="netbeans.accept_license_class" value="org.netbeans.license.AcceptLicense" />
     <property name="build.sysclasspath" value="ignore" />
@@ -98,7 +98,7 @@
     <property name="application.title" value="Auction_Client" />
     <property name="do.archive" value="true" />
     <property name="netbeans.autoupdate.language" value="en" />
-    <property name="wsdl-databasecleaner" value="/home/jeroen/Downloads/03/auction webservice + client/Auction_Client/xml-resources/web-service-references/databasecleaner/wsdl/localhost_8080/databasecleaner.wsdl" />
+    <property name="wsdl-databasecleaner" value="/home/jeroen/Data/git/Classes/SE42/Auction_Client/xml-resources/web-service-references/databasecleaner/wsdl/localhost_8080/databasecleaner.wsdl" />
     <property name="java.vendor" value="Oracle Corporation" />
     <property name="libs.javaee-api-6.0.javadoc" value="/usr/local/netbeans-8.0.2/enterprise/docs/javaee-doc-api.jar" />
     <property name="sun.font.fontmanager" value="sun.awt.X11FontManager" />
@@ -133,8 +133,8 @@
     <property name="libs.spring-framework400.src" value="" />
     <property name="libs.PostgreSQLDriver.src" value="" />
     <property name="sun.arch.data.model" value="64" />
-    <property name="basedir" value="/home/jeroen/Downloads/03/auction webservice + client/Auction_Client" />
-    <property name="wsdl-auction" value="/home/jeroen/Downloads/03/auction webservice + client/Auction_Client/xml-resources/web-service-references/auction/wsdl/localhost_8080/auction.wsdl" />
+    <property name="basedir" value="/home/jeroen/Data/git/Classes/SE42/Auction_Client" />
+    <property name="wsdl-auction" value="/home/jeroen/Data/git/Classes/SE42/Auction_Client/xml-resources/web-service-references/auction/wsdl/localhost_8080/auction.wsdl" />
     <property name="libs.jpa20-persistence.maven-pom" value="" />
     <property name="jar.compress" value="false" />
     <property name="libs.javaee-web-api-7.0.classpath" value="/usr/local/netbeans-8.0.2/enterprise/modules/ext/javaee-web-api-7.0.jar" />
@@ -180,7 +180,7 @@
     <property name="libs.spring-webmvc4.0.maven-pom" value="" />
     <property name="libs.spring-framework300.src" value="" />
     <property name="libs.jstl.src" value="" />
-    <property name="empty.dir" value="/home/jeroen/Downloads/03/auction webservice + client/Auction_Client/build/empty" />
+    <property name="empty.dir" value="/home/jeroen/Data/git/Classes/SE42/Auction_Client/build/empty" />
     <property name="version-output" value="java version &quot;1.8" />
     <property name="test.binarytestincludes" value="" />
     <property name="libs.hibernate4-persistencemodelgen.src" value="" />
@@ -194,7 +194,7 @@
     <property name="netbeans.importclass" value="org.netbeans.upgrade.AutoUpgrade" />
     <property name="ant.project.default-target" value="default" />
     <property name="annotation.processing.run.all.processors" value="true" />
-    <property name="ant.file.Auction_Client-impl" value="/home/jeroen/Downloads/03/auction webservice + client/Auction_Client/nbproject/build-impl.xml" />
+    <property name="ant.file.Auction_Client-impl" value="/home/jeroen/Data/git/Classes/SE42/Auction_Client/nbproject/build-impl.xml" />
     <property name="libs.DataBindingME.maven-pom" value="" />
     <property name="libs.PostgreSQLDriver.javadoc" value="" />
     <property name="libs.restlib.classpath" value="/usr/local/netbeans-8.0.2/enterprise/modules/ext/jersey2/ext/asm-all-repackaged-2.2.0-b21.jar:/usr/local/netbeans-8.0.2/enterprise/modules/ext/jersey2/ext/cglib-2.2.0-b21.jar:/usr/local/netbeans-8.0.2/enterprise/modules/ext/jersey2/ext/guava-14.0.1.jar:/usr/local/netbeans-8.0.2/enterprise/modules/ext/jersey2/ext/hk2-api-2.2.0-b21.jar:/usr/local/netbeans-8.0.2/enterprise/modules/ext/jersey2/ext/hk2-locator-2.2.0-b21.jar:/usr/local/netbeans-8.0.2/enterprise/modules/ext/jersey2/ext/hk2-utils-2.2.0-b21.jar:/usr/local/netbeans-8.0.2/enterprise/modules/ext/jersey2/ext/javax.annotation-api-1.2.jar:/usr/local/netbeans-8.0.2/enterprise/modules/ext/jersey2/ext/javax.inject-2.2.0-b21.jar:/usr/local/netbeans-8.0.2/enterprise/modules/ext/jersey2/ext/javax.servlet-api-3.0.1.jar:/usr/local/netbeans-8.0.2/enterprise/modules/ext/jersey2/ext/jaxb-api-2.2.7.jar:/usr/local/netbeans-8.0.2/enterprise/modules/ext/jersey2/ext/jersey-entity-filtering-2.5.1.jar:/usr/local/netbeans-8.0.2/enterprise/modules/ext/jersey2/ext/jersey-media-moxy-2.5.1.jar:/usr/local/netbeans-8.0.2/enterprise/modules/ext/jersey2/ext/org.osgi.core-4.2.0.jar:/usr/local/netbeans-8.0.2/enterprise/modules/ext/jersey2/ext/osgi-resource-locator-1.0.1.jar:/usr/local/netbeans-8.0.2/enterprise/modules/ext/jersey2/ext/persistence-api-1.0.jar:/usr/local/netbeans-8.0.2/enterprise/modules/ext/jersey2/ext/validation-api-1.1.0.Final.jar:/usr/local/netbeans-8.0.2/enterprise/modules/ext/jersey2/jersey-client.jar:/usr/local/netbeans-8.0.2/enterprise/modules/ext/jersey2/jersey-common.jar:/usr/local/netbeans-8.0.2/enterprise/modules/ext/jersey2/jersey-container-servlet.jar:/usr/local/netbeans-8.0.2/enterprise/modules/ext/jersey2/jersey-container-servlet-core.jar:/usr/local/netbeans-8.0.2/enterprise/modules/ext/jersey2/jersey-server.jar:/usr/local/netbeans-8.0.2/java/modules/ext/eclipselink/eclipselink.jar" />
@@ -224,7 +224,7 @@
     <property name="libs.jsp-compiler.classpath" value="/usr/local/netbeans-8.0.2/enterprise/ant/extra/jspcompile.jar" />
     <property name="javac.processorpath" value="/usr/local/netbeans-8.0.2/platform/modules/ext/junit-4.10.jar:/usr/local/netbeans-8.0.2/java/modules/ext/junit-3.8.2.jar" />
     <property name="javac.compilerargs" value="" />
-    <property name="ant.file" value="/home/jeroen/Downloads/03/auction webservice + client/Auction_Client/build.xml" />
+    <property name="ant.file" value="/home/jeroen/Data/git/Classes/SE42/Auction_Client/build.xml" />
     <property name="libs.beans-binding.maven-pom" value="" />
     <property name="libs.hibernate4-support.javadoc" value="/usr/local/netbeans-8.0.2/java/modules/ext/docs/javax.persistence-2.1.0-doc.zip" />
     <property name="libs.jsf12.classpath" value="/usr/local/netbeans-8.0.2/enterprise/modules/ext/jsf-1_2/commons-beanutils.jar:/usr/local/netbeans-8.0.2/enterprise/modules/ext/jsf-1_2/commons-collections.jar:/usr/local/netbeans-8.0.2/enterprise/modules/ext/jsf-1_2/commons-digester.jar:/usr/local/netbeans-8.0.2/enterprise/modules/ext/jsf-1_2/commons-logging.jar:/usr/local/netbeans-8.0.2/enterprise/modules/ext/jsf-1_2/jsf-api.jar:/usr/local/netbeans-8.0.2/enterprise/modules/ext/jsf-1_2/jsf-impl.jar" />
@@ -300,7 +300,7 @@
     <property name="annotation.processing.processor.options" value="" />
     <property name="libs.testng.maven-pom" value="" />
     <property name="libs.jaxb.src" value="" />
-    <property name="work.dir" value="/home/jeroen/Downloads/03/auction webservice + client/Auction_Client" />
+    <property name="work.dir" value="/home/jeroen/Data/git/Classes/SE42/Auction_Client" />
     <property name="libs.jaxb.classpath" value="/usr/local/netbeans-8.0.2/ide/modules/ext/jaxb/jaxb-impl.jar:/usr/local/netbeans-8.0.2/ide/modules/ext/jaxb/jaxb-xjc.jar:/usr/local/netbeans-8.0.2/ide/modules/ext/jaxb/jaxb1-impl.jar:/usr/local/netbeans-8.0.2/ide/modules/ext/jaxb/activation.jar:/usr/local/netbeans-8.0.2/ide/modules/ext/jaxb/api/jaxb-api.jar:/usr/local/netbeans-8.0.2/ide/modules/ext/jaxb/api/jsr173_1.0_api.jar" />
     <property name="do.depend" value="false" />
     <property name="libs.j2me_common_ant.classpath" value="/usr/local/netbeans-8.0.2/mobility/modules/org-netbeans-modules-j2me-common-ant.jar:/usr/local/netbeans-8.0.2/java/modules/org-netbeans-modules-classfile.jar" />
@@ -319,7 +319,7 @@
     <property name="junit.forkmode" value="perTest" />
     <property name="sun.boot.class.path" value="/usr/lib/jvm/java-8-oracle/jre/lib/resources.jar:/usr/lib/jvm/java-8-oracle/jre/lib/rt.jar:/usr/lib/jvm/java-8-oracle/jre/lib/sunrsasign.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jsse.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jce.jar:/usr/lib/jvm/java-8-oracle/jre/lib/charsets.jar:/usr/lib/jvm/java-8-oracle/jre/lib/jfr.jar:/usr/lib/jvm/java-8-oracle/jre/classes" />
     <property name="javac.target" value="1.7" />
-    <property name="built-jar.properties" value="/home/jeroen/Downloads/03/auction webservice + client/Auction_Client/build/built-jar.properties" />
+    <property name="built-jar.properties" value="/home/jeroen/Data/git/Classes/SE42/Auction_Client/build/built-jar.properties" />
     <property name="build.test.classes.dir" value="build/test/classes" />
     <property name="src.dir" value="src" />
     <property name="libs.jpa2-persistence.src" value="" />
@@ -367,12 +367,12 @@
     <property name="libs.metro.classpath" value="/usr/local/netbeans-8.0.2/ide/modules/ext/jaxb/activation.jar:/usr/local/netbeans-8.0.2/enterprise/modules/ext/metro/webservices-api.jar:/usr/local/netbeans-8.0.2/enterprise/modules/ext/metro/webservices-extra-api.jar:/usr/local/netbeans-8.0.2/enterprise/modules/ext/metro/webservices-extra.jar:/usr/local/netbeans-8.0.2/enterprise/modules/ext/metro/webservices-rt.jar:/usr/local/netbeans-8.0.2/enterprise/modules/ext/metro/webservices-tools.jar" />
     <property name="libs.jpa2-persistence.javadoc" value="/usr/local/netbeans-8.0.2/java/modules/ext/docs/javax.persistence-2.1.0-doc.zip" />
     <property name="libs.DataBindingME.javadoc" value="/usr/local/netbeans-8.0.2/mobility/modules/docs/netbeans_databindingme-api.zip" />
-    <property name="java.class.path" value="/usr/local/netbeans-8.0.2/platform/modules/ext/junit-4.10.jar:/usr/local/netbeans-8.0.2/java/modules/ext/junit-3.8.2.jar:/home/jeroen/Downloads/03/auction webservice + client/Auction_Client/build/classes:/home/jeroen/Downloads/03/auction webservice + client/Auction_Client/build/test/classes:/usr/local/netbeans-8.0.2/extide/ant/lib/ant-launcher.jar:/usr/local/netbeans-8.0.2/extide/ant/lib/ant.jar:/usr/local/netbeans-8.0.2/extide/ant/lib/ant-junit.jar:/usr/local/netbeans-8.0.2/extide/ant/lib/ant-junit4.jar" />
+    <property name="java.class.path" value="/usr/local/netbeans-8.0.2/platform/modules/ext/junit-4.10.jar:/usr/local/netbeans-8.0.2/java/modules/ext/junit-3.8.2.jar:/home/jeroen/Data/git/Classes/SE42/Auction_Client/build/classes:/home/jeroen/Data/git/Classes/SE42/Auction_Client/build/test/classes:/usr/local/netbeans-8.0.2/extide/ant/lib/ant-launcher.jar:/usr/local/netbeans-8.0.2/extide/ant/lib/ant.jar:/usr/local/netbeans-8.0.2/extide/ant/lib/ant-junit.jar:/usr/local/netbeans-8.0.2/extide/ant/lib/ant-junit4.jar" />
     <property name="apple.laf.useScreenMenuBar" value="true" />
     <property name="do.mkdist" value="true" />
     <property name="libs.absolutelayout.src" value="" />
     <property name="libs.jpa20-persistence.classpath" value="/usr/local/netbeans-8.0.2/java/modules/ext/eclipselink/javax.persistence_2.1.0.v201304241213.jar" />
-    <property name="os.version" value="3.16.0-28-generic" />
+    <property name="os.version" value="3.16.0-29-generic" />
     <property name="application.args" value="" />
     <property name="libs.EclipseLink-GlassFish-v3.javadoc" value="/usr/local/netbeans-8.0.2/enterprise/docs/javaee-doc-api.jar" />
     <property name="ant.file.type.Auction_Client-impl" value="file" />
@@ -420,9 +420,9 @@
     <property name="awt.toolkit" value="sun.awt.X11.XToolkit" />
     <property name="libs.javaee-web-api-7.0.javadoc" value="/usr/local/netbeans-8.0.2/enterprise/docs/javaee-doc-api.jar" />
   </properties>
-  <testcase classname="auction.service.AuctionMgrTest" name="findItemByDescription" time="1.638" />
-  <testcase classname="auction.service.AuctionMgrTest" name="getItem" time="0.82" />
-  <testcase classname="auction.service.AuctionMgrTest" name="newBid" time="2.238" />
+  <testcase classname="auction.service.AuctionMgrTest" name="newBid" time="3.72" />
+  <testcase classname="auction.service.AuctionMgrTest" name="getItem" time="0.933" />
+  <testcase classname="auction.service.AuctionMgrTest" name="findItemByDescription" time="1.543" />
   <system-out><![CDATA[]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

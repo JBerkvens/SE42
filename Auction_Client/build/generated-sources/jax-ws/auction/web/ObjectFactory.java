@@ -24,11 +24,8 @@ import javax.xml.namespace.QName;
 @XmlRegistry
 public class ObjectFactory {
 
-    private final static QName _GetUser_QNAME = new QName("http://web.auction/", "getUser");
-    private final static QName _GetUserResponse_QNAME = new QName("http://web.auction/", "getUserResponse");
-    private final static QName _RegisterUserResponse_QNAME = new QName("http://web.auction/", "registerUserResponse");
-    private final static QName _User_QNAME = new QName("http://web.auction/", "user");
-    private final static QName _RegisterUser_QNAME = new QName("http://web.auction/", "registerUser");
+    private final static QName _CleanResponse_QNAME = new QName("http://web.auction/", "cleanResponse");
+    private final static QName _Clean_QNAME = new QName("http://web.auction/", "clean");
 
     /**
      * Create a new ObjectFactory that can be used to create new instances of schema derived classes for package: auction.web
@@ -38,88 +35,37 @@ public class ObjectFactory {
     }
 
     /**
-     * Create an instance of {@link GetUserResponse }
+     * Create an instance of {@link Clean }
      * 
      */
-    public GetUserResponse createGetUserResponse() {
-        return new GetUserResponse();
+    public Clean createClean() {
+        return new Clean();
     }
 
     /**
-     * Create an instance of {@link GetUser }
+     * Create an instance of {@link CleanResponse }
      * 
      */
-    public GetUser createGetUser() {
-        return new GetUser();
+    public CleanResponse createCleanResponse() {
+        return new CleanResponse();
     }
 
     /**
-     * Create an instance of {@link RegisterUser }
+     * Create an instance of {@link JAXBElement }{@code <}{@link CleanResponse }{@code >}}
      * 
      */
-    public RegisterUser createRegisterUser() {
-        return new RegisterUser();
+    @XmlElementDecl(namespace = "http://web.auction/", name = "cleanResponse")
+    public JAXBElement<CleanResponse> createCleanResponse(CleanResponse value) {
+        return new JAXBElement<CleanResponse>(_CleanResponse_QNAME, CleanResponse.class, null, value);
     }
 
     /**
-     * Create an instance of {@link User }
+     * Create an instance of {@link JAXBElement }{@code <}{@link Clean }{@code >}}
      * 
      */
-    public User createUser() {
-        return new User();
-    }
-
-    /**
-     * Create an instance of {@link RegisterUserResponse }
-     * 
-     */
-    public RegisterUserResponse createRegisterUserResponse() {
-        return new RegisterUserResponse();
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetUser }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://web.auction/", name = "getUser")
-    public JAXBElement<GetUser> createGetUser(GetUser value) {
-        return new JAXBElement<GetUser>(_GetUser_QNAME, GetUser.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link GetUserResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://web.auction/", name = "getUserResponse")
-    public JAXBElement<GetUserResponse> createGetUserResponse(GetUserResponse value) {
-        return new JAXBElement<GetUserResponse>(_GetUserResponse_QNAME, GetUserResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RegisterUserResponse }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://web.auction/", name = "registerUserResponse")
-    public JAXBElement<RegisterUserResponse> createRegisterUserResponse(RegisterUserResponse value) {
-        return new JAXBElement<RegisterUserResponse>(_RegisterUserResponse_QNAME, RegisterUserResponse.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link User }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://web.auction/", name = "user")
-    public JAXBElement<User> createUser(User value) {
-        return new JAXBElement<User>(_User_QNAME, User.class, null, value);
-    }
-
-    /**
-     * Create an instance of {@link JAXBElement }{@code <}{@link RegisterUser }{@code >}}
-     * 
-     */
-    @XmlElementDecl(namespace = "http://web.auction/", name = "registerUser")
-    public JAXBElement<RegisterUser> createRegisterUser(RegisterUser value) {
-        return new JAXBElement<RegisterUser>(_RegisterUser_QNAME, RegisterUser.class, null, value);
+    @XmlElementDecl(namespace = "http://web.auction/", name = "clean")
+    public JAXBElement<Clean> createClean(Clean value) {
+        return new JAXBElement<Clean>(_Clean_QNAME, Clean.class, null, value);
     }
 
 }
