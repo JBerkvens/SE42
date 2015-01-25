@@ -35,31 +35,31 @@ public class CreateSingedFile {
             System.out.println("Usage: CreateSignedFile nameOfFileToSign");
         } else {
             try {
-                KeyPairGenerator keyGen = KeyPairGenerator.getInstance("DSA", "SUN");
-                SecureRandom random = SecureRandom.getInstance("SHA1PRNG", "SUN");
-                keyGen.initialize(1024, random);
-                KeyPair pair = keyGen.generateKeyPair();
-                PrivateKey priv = pair.getPrivate();
-                PublicKey pub = pair.getPublic();
-                Signature dsa = Signature.getInstance("SHA1withDSA", "SUN");
-                dsa.initSign(priv);
-                FileInputStream fis = new FileInputStream(args[0]);
-                BufferedInputStream bufin = new BufferedInputStream(fis);
+                KeyPairGenerator keyPairGenerator = KeyPairGenerator.getInstance("RSA");
+                SecureRandom secureRandom = SecureRandom.getInstance("SHA1PRNG");
+                keyPairGenerator.initialize(1024, secureRandom);
+                KeyPair keyPair = keyPairGenerator.generateKeyPair();
+                PrivateKey privateKey = keyPair.getPrivate();
+                PublicKey publicKey = keyPair.getPublic();
+                Signature signature = Signature.getInstance("SHA1withRSA");
+                signature.initSign(privateKey);
+                FileInputStream dataFIS = new FileInputStream(args[0]);
+                BufferedInputStream bufferIn = new BufferedInputStream(dataFIS);
                 byte[] buffer = new byte[1024];
-                int len;
-                while ((len = bufin.read(buffer)) >= 0) {
-                    dsa.update(buffer, 0, len);
+                int part;
+                while ((part = bufferIn.read(buffer)) >= 0) {
+                    signature.update(buffer, 0, part);
                 }
-                bufin.close();
-                byte[] realSig = dsa.sign();
-                FileOutputStream sigfos = new FileOutputStream("sig");
-                sigfos.write(realSig);
-                sigfos.close();
-                byte[] key = pub.getEncoded();
-                FileOutputStream keyfos = new FileOutputStream("suepk");
-                keyfos.write(key);
-                keyfos.close();
-            } catch (NoSuchAlgorithmException | NoSuchProviderException | InvalidKeyException | IOException | SignatureException e) {
+                bufferIn.close();
+                byte[] realSignature = signature.sign();
+                FileOutputStream signatureFOS = new FileOutputStream("sig");
+                signatureFOS.write(realSignature);
+                signatureFOS.close();
+                byte[] key = publicKey.getEncoded();
+                FileOutputStream keyFOS = new FileOutputStream("suepk");
+                keyFOS.write(key);
+                keyFOS.close();
+            } catch (NoSuchAlgorithmException | InvalidKeyException | IOException | SignatureException e) {
                 System.err.println("Caught exception " + e.toString());
             }
         }

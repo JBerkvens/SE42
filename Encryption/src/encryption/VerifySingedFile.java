@@ -26,40 +26,39 @@ public class VerifySingedFile {
      */
     public static void main(String[] args) {
         if (DEVELOPING){
-            args = new String[3];
+            args = new String[2];
             args[0] = "suepk";
-            args[1] = "sig";
-            args[2] = "DataFile.txt";
+            args[1] = "DataFile(SignedBy: J.B.A.J. Berkvens).txt";
         }
-        if (args.length != 3) {
-            System.out.println("Usage: VerifySignedFile publicKeyFile signatureFile dataFile");
+        if (args.length != 2) {
+            System.out.println("Usage: VerifySignedFile publicKeyFile combinedDataFile");
         } else {
             try {
-                FileInputStream keyfis = new FileInputStream(args[0]);
-                byte[] encKey = new byte[keyfis.available()];
-                keyfis.read(encKey);
-                keyfis.close();
-                X509EncodedKeySpec pubKeySpec = new X509EncodedKeySpec(encKey);
-                KeyFactory keyFactory = KeyFactory.getInstance("DSA", "SUN");
-                PublicKey pubKey = keyFactory.generatePublic(pubKeySpec);
-                FileInputStream sigfis = new FileInputStream(args[1]);
-                byte[] sigToVerify = new byte[sigfis.available()];
-                sigfis.read(sigToVerify);
-                sigfis.close();
-                Signature sig = Signature.getInstance("SHA1withDSA", "SUN");
-                sig.initVerify(pubKey);
-                FileInputStream datafis = new FileInputStream(args[2]);
-                BufferedInputStream bufin = new BufferedInputStream(datafis);
+                FileInputStream keyFIS = new FileInputStream(args[0]);
+                byte[] key = new byte[keyFIS.available()];
+                keyFIS.read(key);
+                keyFIS.close();
+                X509EncodedKeySpec pubKeySpec = new X509EncodedKeySpec(key);
+                KeyFactory keyFactory = KeyFactory.getInstance("RSA");
+                PublicKey publicKey = keyFactory.generatePublic(pubKeySpec);
+                FileInputStream combinedFIS = new FileInputStream(args[1]);
+                int available = combinedFIS.available();
+                int byteLength = combinedFIS.read();
+                byte[] signatureToVerify = new byte[byteLength];
+                combinedFIS.read(signatureToVerify);
+                Signature signature = Signature.getInstance("SHA1withRSA");
+                signature.initVerify(publicKey);
+                BufferedInputStream bufferIn = new BufferedInputStream(combinedFIS);
                 byte[] buffer = new byte[1024];
-                int len;
-                while (bufin.available() != 0) {
-                    len = bufin.read(buffer);
-                    sig.update(buffer, 0, len);
+                int part;
+                while (bufferIn.available() != 0) {
+                    part = bufferIn.read(buffer);
+                    signature.update(buffer, 0, part);
                 };
-                bufin.close();
-                boolean verifies = sig.verify(sigToVerify);
+                bufferIn.close();
+                boolean verifies = signature.verify(signatureToVerify);
                 System.out.println("signature verifies: " + verifies);
-            } catch (IOException | NoSuchAlgorithmException | NoSuchProviderException | InvalidKeySpecException | InvalidKeyException | SignatureException e) {
+            } catch (IOException | NoSuchAlgorithmException | InvalidKeySpecException | InvalidKeyException | SignatureException e) {
                 System.err.println("Caught exception " + e.toString());
             }
         }
